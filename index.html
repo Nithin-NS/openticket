@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+<meta charset="utf-8"/>
+<script>
+  (function () {
+    try {
+      var saved = localStorage.getItem('ot-theme');
+      if (saved === 'light' || saved === 'dark') {
+        document.documentElement.setAttribute('data-bs-theme', saved);
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        document.documentElement.setAttribute('data-bs-theme', 'light');
+      }
+    } catch (e) {}
+  })();
+</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>OpenTickets - Live Events &amp; Festival Passes</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="css/main.css" rel="stylesheet"/>
+</head>
+<body class="bg-main">
+<!-- TOP NAVBAR -->
+<header class="navbar navbar-expand-lg navbar-glass sticky-top py-2">
+<div class="container-xl">
+<a aria-label="OpenTickets Home" class="navbar-brand p-0 d-flex align-items-center me-4" href="index.html">
+<img alt="OpenTickets Logo" class="logo-img" src="./img/logo-icon.png"/>
+</a>
+<button aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler border-0 text-white" data-bs-target="#navMain" data-bs-toggle="collapse" type="button">
+<i class="bi bi-list fs-2"></i>
+</button>
+<div class="collapse navbar-collapse" id="navMain">
+<ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-lg-2">
+<li class="nav-item"><a aria-current="page" class="nav-link-ot active" href="index.html">Events</a></li>
+<li class="nav-item"><a class="nav-link-ot" href="faq.html">FAQ</a></li>
+<li class="nav-item"><a class="nav-link-ot" href="#">About</a></li>
+<li class="nav-item"><a class="nav-link-ot" href="#">Contact</a></li>
+</ul>
+<div class="d-flex align-items-center gap-2">
+<div class="input-group d-none d-md-flex nav-search-input-group">
+<span class="input-group-text bg-elevated border-custom text-secondary"><i class="bi bi-search"></i></span>
+<input aria-label="Search" class="form-control bg-elevated border-custom text-white small" placeholder="Search events..." type="text"/>
+</div>
+<button aria-label="Toggle Theme" class="icon-btn" id="themeToggleBtn" onclick="toggleTheme()" type="button">
+<i class="bi bi-moon-stars"></i>
+</button>
+<div class="nav-avatar"><i class="bi bi-person-fill"></i></div>
+</div>
+</div>
+</div>
+</header>
+
+<main class="container-xl" style="padding-top: 2rem; padding-bottom: 4rem;">
+<div class="bg-surface border border-ot rounded-3 px-3 py-2 my-3 d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-2">
+  <div class="d-flex align-items-center gap-2 small min-w-0">
+    <span class="badge badge-primary-pill text-uppercase px-2 py-1 flex-shrink-0">LIVE DROPS</span>
+    <span class="text-white text-truncate fw-medium min-w-0">Soweto Derby 2025 tickets are 84% claimed. Phase 2 booking active now.</span>
+  </div>
+  <div class="d-none d-md-flex align-items-center gap-3 small text-ot-muted flex-shrink-0">
+    <span class="d-flex align-items-center gap-1"><i class="bi bi-shield-check text-ot-primary"></i> 100% Guaranteed Passes</span>
+    <span>•</span>
+    <a class="text-ot-primary text-decoration-none fw-semibold text-nowrap" href="#events-grid">Browse All Events <i class="bi bi-arrow-right"></i></a>
+  </div>
+</div>
+<!-- HERO CAROUSEL -->
+<section class="hero-carousel my-4">
+  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000" aria-roledescription="carousel" aria-label="Featured events">
+    <!-- Indicators -->
+    <div class="hero-carousel-indicators">
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1: Ultra South Africa"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2: Soweto Derby"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3: Trevor Noah Live"></button>
+    </div>
+
+    <div class="carousel-inner">
+      <!-- Slide 1 -->
+      <div class="carousel-item active" role="group" aria-roledescription="slide" aria-label="1 of 3">
+        <div class="hero-slide">
+          <img alt="Ultra South Africa Music Festival" class="hero-bg-img" src="./img/ISR-2026-TICKET-BANNER-Landloop-1370-x-550.png"/>
+          <div class="hero-gradient-overlay"></div>
+          <div class="position-relative z-1 w-100" style="max-width: 800px;">
+            <div class="d-flex flex-wrap gap-2 mb-3">
+              <span class="badge badge-primary-pill text-uppercase px-3 py-2"><i class="bi bi-fire me-1"></i> HEADLINE FESTIVAL</span>
+              <span class="badge badge-glass-pill text-uppercase px-3 py-2">ELECTRONIC / DANCE</span>
+              <span class="badge badge-glass-pill text-uppercase px-3 py-2 text-warning"><i class="bi bi-stopwatch me-1"></i> SELLING OUT</span>
+            </div>
+            <h1 class="display-5 fw-bold text-white mb-2 lh-sm">Ultra South Africa 2025: Johannesburg Stadium Phase</h1>
+            <p class="text-ot-muted mb-4 fs-6 d-flex flex-wrap gap-3">
+              <span><i class="bi bi-calendar3 text-ot-primary me-1"></i> Sat 17 May 2025 • 12:00 PM</span>
+              <span><i class="bi bi-geo-alt-fill text-ot-primary me-1"></i> Expo Centre, Nasrec, JHB</span>
+              <span><i class="bi bi-people-fill text-ot-primary me-1"></i> 35,000+ Expected</span>
+            </p>
+            <div class="d-flex flex-wrap align-items-center gap-3">
+              <a class="btn btn-ot-primary px-4 py-2 rounded-3 d-inline-flex align-items-center gap-2 fs-6" href="#"><span>Get Tickets</span><i class="bi bi-arrow-right-circle-fill fs-6"></i></a>
+              <button class="btn btn-ot-outline px-3 py-2 rounded-3 d-inline-flex align-items-center gap-2 text-white" type="button"><i class="bi bi-bookmark-plus"></i><span>Save Event</span></button>
+              <div class="ms-md-2 small text-ot-muted">Passes starting from <span class="fs-5 fw-bold text-white ms-1">R 695.00</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="2 of 3">
+        <div class="hero-slide">
+          <img alt="Soweto Derby: Kaizer Chiefs vs Orlando Pirates" class="hero-bg-img" src="./img/OPFC-TICKET-(1210x450).jpg"/>
+          <div class="hero-gradient-overlay"></div>
+          <div class="position-relative z-1 w-100" style="max-width: 800px;">
+            <div class="d-flex flex-wrap gap-2 mb-3">
+              <span class="badge badge-primary-pill text-uppercase px-3 py-2"><i class="bi bi-trophy-fill me-1"></i> PREMIER SOCCER</span>
+              <span class="badge badge-glass-pill text-uppercase px-3 py-2">PSL DERBY</span>
+              <span class="badge badge-glass-pill text-uppercase px-3 py-2 text-danger"><i class="bi bi-fire me-1"></i> HIGH DEMAND</span>
+            </div>
+            <h1 class="display-5 fw-bold text-white mb-2 lh-sm">Soweto Derby: Kaizer Chiefs vs Orlando Pirates</h1>
+            <p class="text-ot-muted mb-4 fs-6 d-flex flex-wrap gap-3">
+              <span><i class="bi bi-calendar3 text-ot-primary me-1"></i> Sat 12 Apr 2025 • 15:00</span>
+              <span><i class="bi bi-geo-alt-fill text-ot-primary me-1"></i> FNB Stadium, Johannesburg</span>
+              <span><i class="bi bi-people-fill text-ot-primary me-1"></i> 94,000 Capacity</span>
+            </p>
+            <div class="d-flex flex-wrap align-items-center gap-3">
+              <a class="btn btn-ot-primary px-4 py-2 rounded-3 d-inline-flex align-items-center gap-2 fs-6" href="#"><span>Get Tickets</span><i class="bi bi-arrow-right-circle-fill fs-6"></i></a>
+              <button class="btn btn-ot-outline px-3 py-2 rounded-3 d-inline-flex align-items-center gap-2 text-white" type="button"><i class="bi bi-bookmark-plus"></i><span>Save Event</span></button>
+              <div class="ms-md-2 small text-ot-muted">Passes starting from <span class="fs-5 fw-bold text-white ms-1">R 120.00</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="3 of 3">
+        <div class="hero-slide">
+          <img alt="Trevor Noah Live Gala" class="hero-bg-img" src="./img/AOT-OPEN-TICKETS-BANNER-(1210-x-450-px).png"/>
+          <div class="hero-gradient-overlay"></div>
+          <div class="position-relative z-1 w-100" style="max-width: 800px;">
+            <div class="d-flex flex-wrap gap-2 mb-3">
+              <span class="badge badge-primary-pill text-uppercase px-3 py-2"><i class="bi bi-mic-fill me-1"></i> COMEDY NIGHT</span>
+              <span class="badge badge-glass-pill text-uppercase px-3 py-2">LIVE STAND-UP</span>
+              <span class="badge badge-glass-pill text-uppercase px-3 py-2 text-warning"><i class="bi bi-stopwatch me-1"></i> FINAL 50</span>
+            </div>
+            <h1 class="display-5 fw-bold text-white mb-2 lh-sm">Trevor Noah &amp; Friends Live Gala</h1>
+            <p class="text-ot-muted mb-4 fs-6 d-flex flex-wrap gap-3">
+              <span><i class="bi bi-calendar3 text-ot-primary me-1"></i> Fri 2 May 2025 • 19:30</span>
+              <span><i class="bi bi-geo-alt-fill text-ot-primary me-1"></i> SunBet Arena, Pretoria</span>
+              <span><i class="bi bi-people-fill text-ot-primary me-1"></i> Limited Seating</span>
+            </p>
+            <div class="d-flex flex-wrap align-items-center gap-3">
+              <a class="btn btn-ot-primary px-4 py-2 rounded-3 d-inline-flex align-items-center gap-2 fs-6" href="#"><span>Get Tickets</span><i class="bi bi-arrow-right-circle-fill fs-6"></i></a>
+              <button class="btn btn-ot-outline px-3 py-2 rounded-3 d-inline-flex align-items-center gap-2 text-white" type="button"><i class="bi bi-bookmark-plus"></i><span>Save Event</span></button>
+              <div class="ms-md-2 small text-ot-muted">Passes starting from <span class="fs-5 fw-bold text-white ms-1">R 350.00</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <button class="hero-carousel-control prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev" aria-label="Previous slide">
+      <i class="bi bi-chevron-left"></i>
+    </button>
+    <button class="hero-carousel-control next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next" aria-label="Next slide">
+      <i class="bi bi-chevron-right"></i>
+    </button>
+  </div>
+</section>
+<!-- Filters -->
+<section class="my-4">
+<div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3 mb-3">
+<h5 class="fw-bold m-0 text-white d-flex align-items-center gap-2">
+<i class="bi bi-sliders text-ot-primary"></i> Explore Categories
+</h5>
+<div class="d-flex align-items-center gap-2">
+<span class="small text-ot-muted">Sort by:</span>
+<select class="form-select form-select-sm bg-surface border-ot text-white rounded-2" style="width: auto;">
+<option selected>Trending &amp; Popular</option>
+<option>Upcoming Dates</option>
+<option>Price: Low to High</option>
+</select>
+</div>
+</div>
+<div class="filter-scroll-wrapper">
+<button class="btn btn-sm btn-ot-primary rounded-pill px-3 py-2 text-nowrap"><i class="bi bi-stars me-1"></i> All Events</button>
+<button class="btn btn-sm btn-ot-outline rounded-pill px-3 py-2 text-nowrap"><i class="bi bi-music-note-beamed me-1"></i> House &amp; Groove</button>
+<button class="btn btn-sm btn-ot-outline rounded-pill px-3 py-2 text-nowrap"><i class="bi bi-boombox me-1"></i> Festivals</button>
+<button class="btn btn-sm btn-ot-outline rounded-pill px-3 py-2 text-nowrap"><i class="bi bi-trophy me-1"></i> Premier Soccer (PSL)</button>
+<button class="btn btn-sm btn-ot-outline rounded-pill px-3 py-2 text-nowrap"><i class="bi bi-disc me-1"></i> Electronic &amp; EDM</button>
+<button class="btn btn-sm btn-ot-outline rounded-pill px-3 py-2 text-nowrap"><i class="bi bi-mic me-1"></i> Comedy Nights</button>
+<button class="btn btn-sm btn-ot-outline rounded-pill px-3 py-2 text-nowrap"><i class="bi bi-cup-straw me-1"></i> Wine &amp; Food</button>
+</div>
+</section>
+
+<!-- Events Grid -->
+<section class="my-5" id="events-grid">
+<div class="d-flex justify-content-between align-items-end mb-4">
+<div>
+<span class="badge badge-primary-pill text-uppercase px-2 py-1 mb-1">Curated Passes</span>
+<h2 class="h3 fw-bold text-white mb-0">Upcoming Live Experiences</h2>
+</div>
+<a class="text-ot-primary small fw-semibold text-decoration-none d-flex align-items-center gap-1" href="#">View All 42 Events <i class="bi bi-chevron-right"></i></a>
+</div>
+<div class="row g-4">
+<!-- Card 1 -->
+<div class="col-12 col-sm-6 col-lg-4">
+<div class="event-card h-100 d-flex flex-column">
+<div class="event-card-img-wrap">
+<img alt="Cape Town Electronic Music Festival" class="event-card-img" src="./img/ISR-2026-TICKET-BANNER-Landloop-1370-x-550.png"/>
+<span class="badge badge-primary-pill position-absolute top-0 start-0 m-3">FESTIVAL</span>
+<span class="badge badge-glass-pill position-absolute top-0 end-0 m-3 text-warning"><i class="bi bi-lightning-fill"></i> SELLING FAST</span>
+</div>
+<div class="p-3 d-flex flex-column flex-grow-1 justify-content-between">
+<div>
+<h6 class="fw-bold text-white mb-2 text-truncate" title="Cape Town Electronic Music Festival 2025">Cape Town Electronic Music Festival</h6>
+<div class="small text-ot-muted mb-2">
+<div class="mb-1"><i class="bi bi-calendar-event text-ot-primary me-1"></i> 28 - 30 Mar 2025</div>
+<div class="text-truncate"><i class="bi bi-geo-alt text-ot-primary me-1"></i> Kirstenbosch Gardens, CT</div>
+</div>
+</div>
+<div class="pt-3 border-top border-ot d-flex align-items-center justify-content-between mt-2">
+<div><div class="text-ot-muted" style="font-size: 11px;">FROM</div><div class="fw-bold text-white">R 450.00</div></div>
+<button class="btn btn-sm btn-ot-primary rounded-2 px-3 py-1">Tickets</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="col-12 col-sm-6 col-lg-4">
+<div class="event-card h-100 d-flex flex-column">
+<div class="event-card-img-wrap">
+<img alt="Soweto Derby" class="event-card-img" src="./img/OPFC-TICKET-(1210x450).jpg"/>
+<span class="badge badge-primary-pill position-absolute top-0 start-0 m-3">PSL DERBY</span>
+<span class="badge badge-glass-pill position-absolute top-0 end-0 m-3 text-danger"><i class="bi bi-fire"></i> HIGH DEMAND</span>
+</div>
+<div class="p-3 d-flex flex-column flex-grow-1 justify-content-between">
+<div>
+<h6 class="fw-bold text-white mb-2 text-truncate" title="Soweto Derby: Kaizer Chiefs vs Orlando Pirates">Soweto Derby: Chiefs vs Pirates</h6>
+<div class="small text-ot-muted mb-2">
+<div class="mb-1"><i class="bi bi-calendar-event text-ot-primary me-1"></i> Sat 12 Apr 2025 • 15:00</div>
+<div class="text-truncate"><i class="bi bi-geo-alt text-ot-primary me-1"></i> FNB Stadium, Johannesburg</div>
+</div>
+</div>
+<div class="pt-3 border-top border-ot d-flex align-items-center justify-content-between mt-2">
+<div><div class="text-ot-muted" style="font-size: 11px;">FROM</div><div class="fw-bold text-white">R 120.00</div></div>
+<button class="btn btn-sm btn-ot-primary rounded-2 px-3 py-1">Tickets</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="col-12 col-sm-6 col-lg-4">
+<div class="event-card h-100 d-flex flex-column">
+<div class="event-card-img-wrap">
+<img alt="Going Back West Summer Groove" class="event-card-img" src="./img/KempieFees-Banner-2026-05-22-Factory.jpg"/>
+<span class="badge badge-primary-pill position-absolute top-0 start-0 m-3">HOUSE</span>
+<span class="badge badge-glass-pill position-absolute top-0 end-0 m-3 text-info">EARLY BIRD</span>
+</div>
+<div class="p-3 d-flex flex-column flex-grow-1 justify-content-between">
+<div>
+<h6 class="fw-bold text-white mb-2 text-truncate" title="Going Back West Summer Groove">Going Back West Summer Groove</h6>
+<div class="small text-ot-muted mb-2">
+<div class="mb-1"><i class="bi bi-calendar-event text-ot-primary me-1"></i> Sat 29 Mar 2025 • 14:00</div>
+<div class="text-truncate"><i class="bi bi-geo-alt text-ot-primary me-1"></i> The Greenhouse, Sandton</div>
+</div>
+</div>
+<div class="pt-3 border-top border-ot d-flex align-items-center justify-content-between mt-2">
+<div><div class="text-ot-muted" style="font-size: 11px;">FROM</div><div class="fw-bold text-white">R 155.00</div></div>
+<button class="btn btn-sm btn-ot-primary rounded-2 px-3 py-1">Tickets</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="col-12 col-sm-6 col-lg-4">
+<div class="event-card h-100 d-flex flex-column">
+<div class="event-card-img-wrap">
+<img alt="Sunset Wine &amp; Jazz" class="event-card-img" src="./img/Gomora-United-Banner--(2).png"/>
+<span class="badge badge-primary-pill position-absolute top-0 start-0 m-3">WINE &amp; JAZZ</span>
+<span class="badge badge-glass-pill position-absolute top-0 end-0 m-3">VIP AVAILABLE</span>
+</div>
+<div class="p-3 d-flex flex-column flex-grow-1 justify-content-between">
+<div>
+<h6 class="fw-bold text-white mb-2 text-truncate" title="Cape Town Sunset Wine &amp; Jazz">Cape Town Sunset Wine &amp; Jazz</h6>
+<div class="small text-ot-muted mb-2">
+<div class="mb-1"><i class="bi bi-calendar-event text-ot-primary me-1"></i> Sun 20 Apr 2025 • 12:00</div>
+<div class="text-truncate"><i class="bi bi-geo-alt text-ot-primary me-1"></i> Groot Constantia, Cape Town</div>
+</div>
+</div>
+<div class="pt-3 border-top border-ot d-flex align-items-center justify-content-between mt-2">
+<div><div class="text-ot-muted" style="font-size: 11px;">FROM</div><div class="fw-bold text-white">R 250.00</div></div>
+<button class="btn btn-sm btn-ot-primary rounded-2 px-3 py-1">Tickets</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="col-12 col-sm-6 col-lg-4">
+<div class="event-card h-100 d-flex flex-column">
+<div class="event-card-img-wrap">
+<img alt="Trevor Noah Live" class="event-card-img" src="./img/AOT-OPEN-TICKETS-BANNER-(1210-x-450-px).png"/>
+<span class="badge badge-primary-pill position-absolute top-0 start-0 m-3">COMEDY</span>
+<span class="badge badge-glass-pill position-absolute top-0 end-0 m-3 text-warning">FINAL 50</span>
+</div>
+<div class="p-3 d-flex flex-column flex-grow-1 justify-content-between">
+<div>
+<h6 class="fw-bold text-white mb-2 text-truncate" title="Trevor Noah &amp; Friends Live Gala">Trevor Noah &amp; Friends Live</h6>
+<div class="small text-ot-muted mb-2">
+<div class="mb-1"><i class="bi bi-calendar-event text-ot-primary me-1"></i> Fri 2 May 2025 • 19:30</div>
+<div class="text-truncate"><i class="bi bi-geo-alt text-ot-primary me-1"></i> SunBet Arena, Pretoria</div>
+</div>
+</div>
+<div class="pt-3 border-top border-ot d-flex align-items-center justify-content-between mt-2">
+<div><div class="text-ot-muted" style="font-size: 11px;">FROM</div><div class="fw-bold text-white">R 350.00</div></div>
+<button class="btn btn-sm btn-ot-primary rounded-2 px-3 py-1">Tickets</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="col-12 col-sm-6 col-lg-4">
+<div class="event-card h-100 d-flex flex-column">
+<div class="event-card-img-wrap">
+<img alt="Langa Cultural Concert" class="event-card-img" src="./img/Help24-Banner.png"/>
+<span class="badge badge-primary-pill position-absolute top-0 start-0 m-3">CULTURE</span>
+<span class="badge badge-glass-pill position-absolute top-0 end-0 m-3">OFFICIAL</span>
+</div>
+<div class="p-3 d-flex flex-column flex-grow-1 justify-content-between">
+<div>
+<h6 class="fw-bold text-white mb-2 text-truncate" title="Langa Cultural Heritage Concert">Langa Cultural Heritage Concert</h6>
+<div class="small text-ot-muted mb-2">
+<div class="mb-1"><i class="bi bi-calendar-event text-ot-primary me-1"></i> Sun 25 May 2025 • 11:00</div>
+<div class="text-truncate"><i class="bi bi-geo-alt text-ot-primary me-1"></i> Guga S'Thebe, Cape Town</div>
+</div>
+</div>
+<div class="pt-3 border-top border-ot d-flex align-items-center justify-content-between mt-2">
+<div><div class="text-ot-muted" style="font-size: 11px;">FROM</div><div class="fw-bold text-white">R 90.00</div></div>
+<button class="btn btn-sm btn-ot-primary rounded-2 px-3 py-1">Tickets</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 7 -->
+<div class="col-12 col-sm-6 col-lg-4">
+<div class="event-card h-100 d-flex flex-column">
+<div class="event-card-img-wrap">
+<img alt="Electronic Sunsets" class="event-card-img" src="./img/MSFC-v-DCFC-31-Oct-2026-Banner.jpg"/>
+<span class="badge badge-primary-pill position-absolute top-0 start-0 m-3">CLUB</span>
+<span class="badge badge-glass-pill position-absolute top-0 end-0 m-3 text-warning">FEW PASSES</span>
+</div>
+<div class="p-3 d-flex flex-column flex-grow-1 justify-content-between">
+<div>
+<h6 class="fw-bold text-white mb-2 text-truncate" title="Electronic Sunsets Warehouse Rave">Electronic Sunsets Warehouse</h6>
+<div class="small text-ot-muted mb-2">
+<div class="mb-1"><i class="bi bi-calendar-event text-ot-primary me-1"></i> Sat 7 Jun 2025 • 20:00</div>
+<div class="text-truncate"><i class="bi bi-geo-alt text-ot-primary me-1"></i> The Sheds, Durban</div>
+</div>
+</div>
+<div class="pt-3 border-top border-ot d-flex align-items-center justify-content-between mt-2">
+<div><div class="text-ot-muted" style="font-size: 11px;">FROM</div><div class="fw-bold text-white">R 220.00</div></div>
+<button class="btn btn-sm btn-ot-primary rounded-2 px-3 py-1">Tickets</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 8 -->
+<div class="col-12 col-sm-6 col-lg-4">
+<div class="event-card h-100 d-flex flex-column">
+<div class="event-card-img-wrap">
+<img alt="Soweto Derby VIP" class="event-card-img" src="./img/Black-Swan-Banner-1210-x-450.png"/>
+<span class="badge badge-primary-pill position-absolute top-0 start-0 m-3">SPORTS VIP</span>
+<span class="badge badge-glass-pill position-absolute top-0 end-0 m-3 text-success">VERIFIED</span>
+</div>
+<div class="p-3 d-flex flex-column flex-grow-1 justify-content-between">
+<div>
+<h6 class="fw-bold text-white mb-2 text-truncate" title="Soweto Derby Presidential Hospitality">Derby Presidential Hospitality</h6>
+<div class="small text-ot-muted mb-2">
+<div class="mb-1"><i class="bi bi-calendar-event text-ot-primary me-1"></i> Sat 12 Apr 2025 • 13:00</div>
+<div class="text-truncate"><i class="bi bi-geo-alt text-ot-primary me-1"></i> FNB Stadium Suites, JHB</div>
+</div>
+</div>
+<div class="pt-3 border-top border-ot d-flex align-items-center justify-content-between mt-2">
+<div><div class="text-ot-muted" style="font-size: 11px;">FROM</div><div class="fw-bold text-white">R 1,250.00</div></div>
+<button class="btn btn-sm btn-ot-primary rounded-2 px-3 py-1">Tickets</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 9 -->
+<div class="col-12 col-sm-6 col-lg-4">
+<div class="event-card h-100 d-flex flex-column">
+<div class="event-card-img-wrap">
+<img alt="Soweto Derby VIP" class="event-card-img" src="./img/Ticket-Banner-2.png"/>
+<span class="badge badge-primary-pill position-absolute top-0 start-0 m-3">SPORTS VIP</span>
+<span class="badge badge-glass-pill position-absolute top-0 end-0 m-3 text-success">VERIFIED</span>
+</div>
+<div class="p-3 d-flex flex-column flex-grow-1 justify-content-between">
+<div>
+<h6 class="fw-bold text-white mb-2 text-truncate" title="Soweto Derby Presidential Hospitality">Derby Presidential Hospitality</h6>
+<div class="small text-ot-muted mb-2">
+<div class="mb-1"><i class="bi bi-calendar-event text-ot-primary me-1"></i> Sat 12 Apr 2025 • 13:00</div>
+<div class="text-truncate"><i class="bi bi-geo-alt text-ot-primary me-1"></i> FNB Stadium Suites, JHB</div>
+</div>
+</div>
+<div class="pt-3 border-top border-ot d-flex align-items-center justify-content-between mt-2">
+<div><div class="text-ot-muted" style="font-size: 11px;">FROM</div><div class="fw-bold text-white">R 1,250.00</div></div>
+<button class="btn btn-sm btn-ot-primary rounded-2 px-3 py-1">Tickets</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Trending Cities -->
+<section class="my-5">
+<div class="d-flex justify-content-between align-items-end mb-4">
+<div>
+<span class="badge badge-primary-pill text-uppercase px-2 py-1 mb-1">Destinations</span>
+<h2 class="h3 fw-bold text-white mb-0">Trending Cities</h2>
+</div>
+<span class="small text-ot-muted d-none d-md-inline">Explore events near you</span>
+</div>
+<div class="row g-3">
+<div class="col-6 col-md-3">
+<div class="city-card d-flex align-items-center justify-content-between">
+<div class="d-flex align-items-center gap-3">
+<div class="icon-circle-36 icon-btn text-ot-primary bg-main"><i class="bi bi-buildings-fill fs-5"></i></div>
+<div><div class="fw-bold text-white">Johannesburg</div><div class="small text-ot-muted">18 Active Events</div></div>
+</div>
+<i class="bi bi-chevron-right text-ot-muted"></i>
+</div>
+</div>
+<div class="col-6 col-md-3">
+<div class="city-card d-flex align-items-center justify-content-between">
+<div class="d-flex align-items-center gap-3">
+<div class="icon-circle-36 icon-btn text-ot-primary bg-main"><i class="bi bi-water fs-5"></i></div>
+<div><div class="fw-bold text-white">Cape Town</div><div class="small text-ot-muted">14 Active Events</div></div>
+</div>
+<i class="bi bi-chevron-right text-ot-muted"></i>
+</div>
+</div>
+<div class="col-6 col-md-3">
+<div class="city-card d-flex align-items-center justify-content-between">
+<div class="d-flex align-items-center gap-3">
+<div class="icon-circle-36 icon-btn text-ot-primary bg-main"><i class="bi bi-sun-fill fs-5"></i></div>
+<div><div class="fw-bold text-white">Durban</div><div class="small text-ot-muted">7 Active Events</div></div>
+</div>
+<i class="bi bi-chevron-right text-ot-muted"></i>
+</div>
+</div>
+<div class="col-6 col-md-3">
+<div class="city-card d-flex align-items-center justify-content-between">
+<div class="d-flex align-items-center gap-3">
+<div class="icon-circle-36 icon-btn text-ot-primary bg-main"><i class="bi bi-compass-fill fs-5"></i></div>
+<div><div class="fw-bold text-white">Pretoria</div><div class="small text-ot-muted">5 Active Events</div></div>
+</div>
+<i class="bi bi-chevron-right text-ot-muted"></i>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Integration / Organizer -->
+<section class="my-5">
+<div class="row g-4">
+<div class="col-12 col-lg-7">
+<div class="p-4 p-md-5 bg-surface border border-ot rounded-4 h-100 d-flex flex-column justify-content-between">
+<div>
+<span class="badge badge-primary-pill text-uppercase mb-3 px-3 py-1">DYNAMIC ENTRY</span>
+<h3 class="fw-bold text-white mb-2">Instant Digital Stubs &amp; Offline Entry</h3>
+<p class="text-ot-muted mb-4">Every OpenTickets pass features rotating anti-scalp dynamic barcodes with direct Apple &amp; Google Wallet compatibility, guaranteed to scan smoothly even with offline stadium connectivity.</p>
+</div>
+<div class="p-3 bg-surface-elevated border border-ot rounded-3 d-flex flex-wrap align-items-center justify-content-between gap-3">
+<div class="d-flex align-items-center gap-3">
+<div class="bg-main border border-ot rounded-3 text-center p-2" style="width: 60px;">
+<div class="small text-ot-primary fw-bold">APR</div>
+<div class="fs-4 fw-bold text-white">12</div>
+</div>
+<div>
+<div class="fw-bold text-white">Soweto Derby: VIP Tier</div>
+<div class="small text-ot-muted">Gate 4 • Turnstile B • Row 12, Seat 44</div>
+</div>
+</div>
+<div class="d-flex align-items-center gap-2">
+<span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 fw-semibold">
+<i class="bi bi-check-circle-fill me-1"></i> VERIFIED PASS
+</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-12 col-lg-5">
+<div class="p-4 p-md-5 bg-surface border border-ot rounded-4 h-100 d-flex flex-column justify-content-between">
+<div>
+<span class="badge badge-primary-pill text-uppercase mb-3 px-3 py-1"><i class="bi bi-megaphone-fill me-1"></i> ORGANIZERS</span>
+<h3 class="fw-bold text-white mb-2">Host Your Event on OpenTickets</h3>
+<p class="text-ot-muted mb-4">Join hundreds of South African promoters. Benefit from zero upfront fees, instant gate scanners, and same-day ticket payout settlements.</p>
+</div>
+<div>
+<div class="d-flex gap-3 mb-3 text-ot-muted small">
+<div><i class="bi bi-check-circle-fill text-ot-primary me-1"></i> 2.5% Flat Processing</div>
+<div><i class="bi bi-check-circle-fill text-ot-primary me-1"></i> Daily Payouts</div>
+</div>
+<button class="btn btn-ot-outline w-100 py-2 rounded-3 d-flex align-items-center justify-content-center gap-2">
+<span>Open Organizer Portal</span><i class="bi bi-box-arrow-up-right"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Newsletter -->
+<section class="my-5">
+<div class="p-4 p-md-5 bg-surface border border-ot rounded-4">
+<div class="row align-items-center g-4">
+<div class="col-12 col-lg-6">
+<span class="badge badge-primary-pill text-uppercase mb-2 px-3 py-1">EARLY-BIRD ALERTS</span>
+<h3 class="fw-bold text-white mb-2">Never miss secret drops &amp; ticket releases</h3>
+<p class="text-ot-muted mb-0">Receive weekly curated lineups, sports derby announcements, and exclusive promo discounts for events in your region.</p>
+</div>
+<div class="col-12 col-lg-6">
+<form class="d-flex flex-column flex-sm-row gap-2" onsubmit="event.preventDefault(); this.innerHTML='&lt;div class=\'alert alert-success border-0 bg-success-subtle text-success w-100 mb-0 py-2 fw-semibold\'&gt;&lt;i class=\'bi bi-check-circle-fill me-1\'&gt;&lt;/i&gt; You are subscribed to OpenTickets weekly alerts!&lt;/div&gt;';">
+<input class="form-control bg-surface-elevated border-ot text-white py-2 px-3" placeholder="Enter your email address" required type="email"/>
+<button class="btn btn-ot-primary px-4 py-2 text-nowrap rounded-3" type="submit">Get Alerts</button>
+</form>
+<div class="small text-ot-muted mt-2" style="font-size: 11px;">
+<i class="bi bi-shield-lock me-1"></i> 100% spam free. Unsubscribe anytime with one click.
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="border-top py-5 mt-5 border-custom">
+<div class="container-xl">
+<div class="row g-4 justify-content-between align-items-start">
+<div class="col-lg-5">
+<div class="mb-3">
+<img alt="OpenTickets Logo" class="logo-img" src="./img/logo-icon.png"/>
+</div>
+<p class="text-secondary small mb-0" style="max-width: 400px; line-height: 1.6;">
+Next-generation ticketing platform empowering live event discovery, instant passes, and direct cultural access across Southern Africa.
+</p>
+</div>
+<div class="col-6 col-lg-3">
+<div class="text-uppercase fw-bold text-white small mb-3">Quick Links</div>
+<ul class="list-unstyled d-flex flex-column gap-2 small text-secondary mb-0">
+<li><a class="footer-link" href="index.html">All Events</a></li>
+<li><a class="footer-link" href="#">Organizer Portal</a></li>
+<li><a class="footer-link" href="faq.html">Ticket Verification FAQ</a></li>
+<li><a class="footer-link" href="#">Support Desk</a></li>
+</ul>
+</div>
+<div class="col-6 col-lg-3">
+<div class="text-uppercase fw-bold text-white small mb-3">Connect &amp; Social</div>
+<div class="d-flex align-items-center gap-2 mb-3">
+<a aria-label="Instagram" class="icon-btn" href="#"><i class="bi bi-instagram"></i></a>
+<a aria-label="Twitter" class="icon-btn" href="#"><i class="bi bi-twitter-x"></i></a>
+<a aria-label="Facebook" class="icon-btn" href="#"><i class="bi bi-facebook"></i></a>
+</div>
+<div class="small text-secondary">Support: <strong>support@opentickets.co.za</strong></div>
+</div>
+</div>
+<hr class="my-4" style="border-color: var(--ot-border);"/>
+<div class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-3 small text-secondary">
+<div>© 2025 OpenTickets Inc. All rights reserved.</div>
+<div class="d-flex align-items-center gap-3">
+<a class="footer-link" href="#">Privacy Policy</a>
+<a class="footer-link" href="#">Terms of Service</a>
+<a class="footer-link" href="#">Cookie Settings</a>
+</div>
+</div>
+</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
